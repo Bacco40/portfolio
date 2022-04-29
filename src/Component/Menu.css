@@ -1,0 +1,119 @@
+.menuContainer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+.toggler{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    height: 60px;
+    width:60px;
+    opacity: 0;
+}
+.hamburger{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 70px;
+    width:70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    justify-content: center;
+}
+.hamburger > div {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: #d1dfe8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+.hamburger > div:before,
+.hamburger > div:after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -15px;
+    width: 100%;
+    height: 3px;
+    background-color: #d1dfe8;
+}
+.hamburger > div:after{
+    top: 15px;
+}
+.toggler:checked + .hamburger > div{
+    transform: rotate(135deg);
+}
+.toggler:checked + .hamburger > div:before,
+.toggler:checked + .hamburger > div:after{
+    top: 0;
+    transform: rotate(90deg);
+}
+.toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+}
+.toggler:checked ~ .menu{
+    visibility: visible;
+}
+.toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: 0.75s;
+}
+.toggler:checked ~ .menu > div > div {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+.menu{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.menu > div{
+    background-color: rgba(37, 39, 41, 0.85);
+    border-radius: 50%;
+    width: 500vw;
+    height:500vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+.menu > div > div{
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.menu > div > div > ul > li{
+    list-style-type: none;
+    padding: 1rem;
+}
+.menu > div > div > ul > li > button {
+    background-color: inherit;
+    border: 0;
+    font-size: 1.5rem;
+    color: #d1dfe8;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
