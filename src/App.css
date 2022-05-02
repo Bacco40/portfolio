@@ -526,6 +526,10 @@ textarea:focus, input:focus{
     .projectContainer{
         padding: 30px 5px ;
     }
+    .sectionTransition{
+        -webkit-transform: translateX(2em);
+            transform: translateX(2em);
+    }
   }
 @media (max-width: 650px) {
     .myPic{
@@ -537,6 +541,10 @@ textarea:focus, input:focus{
     }
     .videoDescription{
         left:2vw;
+    }
+    .sectionTransition{
+        -webkit-transform: translateX(1em);
+            transform: translateX(1em);
     }
 }
 @media (max-width: 450px) {
