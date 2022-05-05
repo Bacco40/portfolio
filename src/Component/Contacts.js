@@ -54,9 +54,9 @@ function Contact() {
           <p className='description' id='contactIntro'>I'm currently looking for a role as a full-stack web developer.<br/>Whether you have a question, an offer or just want to chat, send me an email or a message and I will get back to you!</p>
           <div className='formContainer'>
             <form id="contact-form" ref={form} onSubmit={sendEmail}>
-              <input type="text" name="user_name" id='nameForm' placeholder='YOUR NAME *' />
-              <input type="text" name="user_email" id='user_email' placeholder='YOUR EMAIL ADDRESS *'/>
-              <textarea name="message" id='message' placeholder='YOUR MESSAGE *'></textarea>
+              <input type="text" name="user_name" id='nameForm' placeholder='Your Name*' />
+              <input type="text" name="user_email" id='user_email' placeholder='Your Email Address*'/>
+              <textarea name="message" id='message' placeholder='Your Message*'></textarea>
               <div className='formBottom'>
                 <div className='messageResult'></div> 
                 <input type="submit" value="Send Message" className='sendMail'/>
