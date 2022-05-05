@@ -289,6 +289,12 @@ input, textarea{
     padding: 3px 10px;
     color: #d1dfe8;
 }
+::placeholder {
+    color: #d1dfe8;
+    font-size: clamp(16px,1.3vw,2rem);
+    opacity: 1;
+  }
+  
 textarea{
     resize: none;
 }
