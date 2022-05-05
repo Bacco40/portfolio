@@ -7,7 +7,7 @@ function Header() {
   window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "-2%";
+        document.getElementById("navbar").style.top = "0%";
     } else {
         document.getElementById("navbar").style.top = "-120px";
     }
