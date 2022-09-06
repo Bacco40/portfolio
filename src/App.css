@@ -32,14 +32,32 @@ nav{
     font-size: clamp(20px,2.2vw,4rem);
     background-color: inherit;
     cursor: pointer;
-    color: #d1dfe8;
+    color: #f0f2f5;
+    position: relative;
 }
 li{
     list-style-type: none;
 }
+.pageOptions::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+} 
+.pageOptions:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.pageOptions::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #d9a86a;
+    z-index: -1;
+    transition: transform .3s ease;
+}
 .pageOptions:hover{
-    animation: scale 0.6s both;
-    color: #8cabf0;
+    color: #212224;
 }
 main{
     padding: 0 120px;
@@ -60,7 +78,7 @@ main{
     padding-left: clamp(50px,22vw,350px);
 }
 .square{
-    background: yellow;
+    background-image: linear-gradient(to left top, #5859df 0%, #1877f2 100%);
     filter:grayscale(10%) invert(90%);
     width: clamp(80px,30vw,25rem);
     height: clamp(120px,40vw,35rem);
@@ -71,9 +89,10 @@ main{
     mix-blend-mode: screen;
 }
 hr{
-    border: 2px solid #d1dfe8;
+    border: 2px solid #f0f2f5;
     border-radius: 5px;
     width:100%;
+    margin-bottom: 20px;
 }
 .subTitle{
     display: grid;
@@ -112,10 +131,12 @@ hr{
     display: flex;
     justify-content: start;
     font-weight: lighter;
-    color: #d1dfe8;
+    color: #d9a86a;
     font-size: clamp(22px,3vw,6rem);
     margin: 0;
-    padding-top: 10px;
+    padding: 10px 15px 0px 15px;
+    width: max-content;
+    background-color: #212224;
 }
 .aboutContent{
     display: flex;
@@ -181,8 +202,8 @@ p{
     text-align: start;
     padding: 15px;
     color: #212224;
-    font-weight: 400;
-    font-size: clamp(16px,1.6vw,2rem);
+    font-weight: 500;
+    font-size: clamp(20px,1.8vw,2.1rem);
 }
 .titleContainer{
     display: flex;
@@ -194,24 +215,48 @@ p{
     gap:20px;
     padding: 10px;
 }
-.link, .sendMail{
-    text-decoration: none;
-    font-size: clamp(16px,1.6vw,2rem);
-    background-color: #2b2d2f;
-    color: #d1dfe8;
-    padding: 3px 10px;
-    border-radius: 10px;
-    border: 2px solid #2b2d2f ;
+#sendMail{
+    border: 0;
+}
+.link:before {
+		position: absolute; 
+		left: 0;
+		bottom: 0;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: #f0f2f5;
+		transform-origin: 0 bottom 0;
+		transform: scaleY(0);
+		transition: .4s ease-out;
+	}
+.link {
+	display: flex;
+	text-decoration: none;
+	color: inherit;
+	max-width: 400px;
+	position: relative;
+	padding: 3px 10px;
+	background-color: #2b2d2f;
+	cursor: pointer; 
+}
+.link:hover:before {
+    transform: scaleY(1);
+}
+.link:hover .linkTitle{
+    color: #2b2d2f;
+}
+.linkTitle {
+	position: relative;
+	font-size: clamp(16px,1.6vw,2rem);
+	font-weight: 400;
+	line-height: 1.333;
+	transition: .4s ease-out;
+    color:#f0f2f5;
 }
 .sendMail{
     width: max-content;
-}
-.link:hover, .sendMail:hover {
-    border: 2px solid #d1dfe8 ;
-    background-color: #d1dfe8;
-    color: #2b2d2f;
-    animation: scale2 0.4s both;
-    transition: all 0.4s ease;
 }
 .descriptionContainer, .descriptionContainerRight, .descriptionContainerHidden{
     position: relative;
@@ -219,7 +264,7 @@ p{
     margin-right: 10px;
     -webkit-box-shadow: 0 0 10px rgb(22, 22, 22);
     box-shadow: 0 0 10px rgb(22, 22, 22);
-    background-image: linear-gradient(to left top, #5859df 0%, #5152de 100%);
+    background-image: linear-gradient(to left top, #b6b670 0%, #d9a86a 100%);
     z-index: 1;
 }
 .descriptionContainerRight{
@@ -228,7 +273,7 @@ p{
 }
 .videoDescription{
     padding: 15px;
-    background-color: #d1dfe8; 
+    background-color: #f0f2f5; 
     position: relative;
     top:1vw;
     left: 3vw;
@@ -282,6 +327,9 @@ video::-webkit-media-controls {
     flex-direction: column;
     gap: 10px;
 }
+.pugLogo{
+    height: 50px;
+}
 input, textarea{
     background-color: inherit;
     font-size: clamp(16px,1.3vw,2rem);
@@ -290,7 +338,9 @@ input, textarea{
     color: #d1dfe8;
 }
 ::placeholder {
-    color: #d1dfe8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    color: black;
     font-size: clamp(16px,1.3vw,2rem);
     opacity: 0.7;
   }
@@ -303,7 +353,7 @@ textarea:focus, input:focus{
     transform: scale(1.01);
 }
 .formContainer{
-    background-image: linear-gradient(to left top, #5859df 0%, #5152de 100%);
+    background-image: linear-gradient(to left top, #b6b670 0%, #d9a86a 100%);
     margin: 30px 0px 30px 20%;
     padding: 20px;
 }
@@ -314,8 +364,8 @@ textarea:focus, input:focus{
     gap: 10px;
 }
 .messageResult{
-    color: #d1dfe8;
-    font-weight: 200;
+    color: #212224;
+    font-weight: 400;
     font-size: clamp(16px,1.6vw,2rem);
     text-align: start;
 }
@@ -346,6 +396,11 @@ textarea:focus, input:focus{
     z-index: 5;
     opacity: 0.9;
     transition: top 0.3s; 
+}
+em{
+    background-color: #d9a86a;
+    color: #212224;
+    font-weight: 300;
 }
 .menuContainer{
     position: absolute;
@@ -403,7 +458,7 @@ textarea:focus, input:focus{
     position: relative;
     width: 100%;
     height: 3px;
-    background-color: #d1dfe8;
+    background-color: #f0f2f5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -417,7 +472,7 @@ textarea:focus, input:focus{
     top: -15px;
     width: 100%;
     height: 3px;
-    background-color: #d1dfe8;
+    background-color: #f0f2f5;
 }
 .hamburger > div:after{
     top: 15px;
@@ -475,6 +530,9 @@ textarea:focus, input:focus{
     opacity: 0;
     transition: opacity 0.4s ease;
 }
+.menu > div > div > ul {
+    padding: 0;
+}
 .menu > div > div > ul > li{
     list-style-type: none;
     padding: 1rem;
@@ -483,15 +541,34 @@ textarea:focus, input:focus{
     background-color: inherit;
     border: 0;
     font-size: 1.5rem;
-    color: #d1dfe8;
+    color: #f0f2f5;
     text-decoration: none;
     transition: color 0.4s ease;
+    position: relative;
+}
+.buttonMenu::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+} 
+.buttonMenu:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.buttonMenu::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #d9a86a;
+    z-index: -1;
+    transition: transform .3s ease;
 }
 .buttonMenu:hover{
+    color: #212224;
     cursor: pointer;
-    animation: scale 0.6s both;
-    color: #8cabf0;
 }
+
 @media (max-width: 1080px) {
     .singleProject{
         flex-direction: column;
@@ -530,6 +607,9 @@ textarea:focus, input:focus{
     [class^="devicon-"], [class*=" devicon-"]{
         font-size: 30px;
     }
+    .pugLogo{
+        height: 30px;
+    }
     .projectContainer{
         padding: 30px 5px ;
     }
@@ -566,6 +646,9 @@ textarea:focus, input:focus{
     }
     [class^="devicon-"], [class*=" devicon-"]{
         font-size: 20px;
+    }
+    .pugLogo{
+        height: 20px;
     }
     .toggler, .menuContainer{
         top:15%;

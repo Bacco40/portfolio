@@ -59,7 +59,9 @@ function Contact() {
               <textarea name="message" id='message' placeholder='Your Message*'></textarea>
               <div className='formBottom'>
                 <div className='messageResult'></div> 
-                <input type="submit" value="Send Message" className='sendMail'/>
+                <button type="submit" className='link' id='sendMail'>
+                  <div className="linkTitle">Send Message</div>
+                </button>
               </div>
             </form>
           </div>
