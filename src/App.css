@@ -65,7 +65,7 @@ main{
 .pageTitle{
     display: flex;
     flex-direction: column;
-    color: #d1dfe8;
+    color: #f0f2f5;
     align-items: start;
     font-weight: lighter;
     font-size: clamp(20px,12vw,10rem);
@@ -76,6 +76,10 @@ main{
 }
 .rightSide{
     padding-left: clamp(50px,22vw,350px);
+}
+.based{
+    background-color: #212224;
+    color: #d9a86a;
 }
 .square{
     background-image: linear-gradient(to left top, #5859df 0%, #1877f2 100%);
@@ -102,7 +106,7 @@ hr{
     animation: slide-in 1.2s both;
 }
 .info{
-    color: #d1dfe8;
+    color: #f0f2f5;
     font-size: clamp(16px,2.2vw,5rem);
     display: flex;
     flex-direction: column;
@@ -156,7 +160,7 @@ hr{
     display: flex;
     flex-direction: column;
     text-align: start;
-    color: #d1dfe8;
+    color: #f0f2f5;
     font-weight: 200;
     padding-left: 15px;
     font-size: clamp(16px,1.6vw,2rem);
@@ -182,7 +186,7 @@ p{
 }
 .logoDescription{
     padding-top: 5px;
-    color: #d1dfe8;
+    color: #f0f2f5;
     font-size:clamp(16px,1.3vw,2rem) ;
     font-weight: lighter;
 }
@@ -283,7 +287,7 @@ p{
 }
 .videoDescriptionRight{
     padding: 15px;
-    background-color: #d1dfe8; 
+    background-color: #f0f2f5; 
     position: relative;
     top:1vw;
     right: 3vw;
@@ -335,7 +339,7 @@ input, textarea{
     font-size: clamp(16px,1.3vw,2rem);
     border: 1px solid #212224;
     padding: 3px 10px;
-    color: #d1dfe8;
+    color: #212224;
 }
 ::placeholder {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -423,7 +427,7 @@ em{
 }
 .bottomBtn{
     font-size: clamp(22px,3vw,6rem);
-    color: #d1dfe8;
+    color: #f0f2f5;
     background-color: inherit;
     border: none;
 }
@@ -602,7 +606,7 @@ em{
         transition: opacity 0.4s ease;
     }
     hr{
-        border: 1px solid #d1dfe8;
+        border: 1px solid #f0f2f5;
     }
     [class^="devicon-"], [class*=" devicon-"]{
         font-size: 30px;

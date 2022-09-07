@@ -18,6 +18,8 @@ function Project() {
   const instaBtn = useRef();
   const storeBtn = useRef();
   const findUsBtn = useRef();
+  const facebookBtn = useRef();
+  const blogBtn = useRef();
 
   function clickVideo(ref){
     ref.current.dispatchEvent(
@@ -43,7 +45,7 @@ function Project() {
                             <a className="link" href="https://github.com/Bacco40/Odinbook" target="_blank" rel="noreferrer">
                                 <div className="linkTitle">GitHub</div>
                             </a>
-                            <a className="link" ref={instaBtn} href="http://odinbookclone.herokuapp.com" target="_blank" rel="noreferrer">
+                            <a className="link" ref={facebookBtn} href="http://odinbookclone.herokuapp.com" target="_blank" rel="noreferrer">
                                 <div className="linkTitle">Live</div>
                             </a>
                         </div>
@@ -58,7 +60,7 @@ function Project() {
                         </div>
                     </div>
                 </div>
-                <video poster={facebookImg} className="videoContainer" loop muted preload="none" onMouseOver={(e)=>e.target.play()} onMouseOut={(e)=>e.target.pause()} onClick={(e)=>clickVideo(instaBtn)}>
+                <video poster={facebookImg} className="videoContainer" loop muted preload="none" onMouseOver={(e)=>e.target.play()} onMouseOut={(e)=>e.target.pause()} onClick={(e)=>clickVideo(facebookBtn)}>
                     <source src={facebook} type="video/mp4"/>
                 </video> 
             </div>
@@ -70,7 +72,7 @@ function Project() {
                             <a className="link" href="https://github.com/Bacco40/BlogApi" target="_blank" rel="noreferrer">
                                 <div className="linkTitle">GitHub</div>
                             </a>
-                            <a className="link" ref={findUsBtn} href="https://blogifyodinapp.herokuapp.com" target="_blank" rel="noreferrer">
+                            <a className="link" ref={blogBtn} href="https://blogifyodinapp.herokuapp.com" target="_blank" rel="noreferrer">
                                 <div className="linkTitle">Live</div>
                             </a>
                         </div>
@@ -87,7 +89,7 @@ function Project() {
                         </div>
                     </div>
                 </div> 
-                <video poster={blogImg} className="videoContainer" loop muted preload="none" onMouseOver={(e)=>e.target.play()} onMouseOut={(e)=>e.target.pause()} onClick={(e)=>clickVideo(findUsBtn)}>
+                <video poster={blogImg} className="videoContainer" loop muted preload="none" onMouseOver={(e)=>e.target.play()} onMouseOut={(e)=>e.target.pause()} onClick={(e)=>clickVideo(blogBtn)}>
                     <source src={blog} type="video/mp4"/>
                 </video>
                 <div className="descriptionContainerRight">

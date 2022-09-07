@@ -13,8 +13,8 @@ function Title() {
         <div className="subTitle">
             <hr/><div></div>
             <div className="info">
-                <span>Based in</span>
-                <span>Italy &nbsp; &nbsp;<span className="wave">👋</span></span>
+                <span className="based">Based in</span>
+                <span><span className="based">Italy &nbsp;</span> &nbsp;<span className="wave">👋</span></span>
             </div>
         </div>
     </section>
